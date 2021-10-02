@@ -8,11 +8,11 @@ int main()
 {
     float edge1, edge2, edge3, side1, side2;
 
-    cout << "The first edge of the brick: "; cin >> edge1;
-    cout << "The second edge of the brick: "; cin >> edge2;
-    cout << "The third edge of the brick: "; cin >> edge3;
-    cout << "The first side of the hole: "; cin >> side1;
-    cout << "The second side of the hole: "; cin >> side2;
+    cout << "Input first edge of the brick: "; cin >> edge1;
+    cout << "Input second edge of the brick: "; cin >> edge2;
+    cout << "Input third edge of the brick: "; cin >> edge3;
+    cout << "Input first side of the hole: "; cin >> side1;
+    cout << "Input second side of the hole: "; cin >> side2;
 
     bool data_is_correct = true;
 
