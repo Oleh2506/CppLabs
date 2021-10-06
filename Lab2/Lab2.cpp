@@ -32,11 +32,11 @@ int main()
             || ((side1 >= edge1) && (side2 >= edge3)) || ((side1 >= edge2) && (side2 >= edge1)) 
             || ((side1 >= edge3) && (side2 >= edge2)) || ((side1 >= edge3) && (side2 >= edge1)))
         {
-            cout << "The brick can be pushed through the hole\n"; // output of the result message
+            cout << "The brick can be pushed through the hole\n"; // output result message
         }
         else
         {
-            cout << "The brick can't be pushed through the hole\n"; // output of the result message
+            cout << "The brick can't be pushed through the hole\n"; // output result message
         }
     }
 
