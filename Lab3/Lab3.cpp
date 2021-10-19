@@ -16,17 +16,17 @@ int main()
 	cout << "Input variable \"a\" in the range (0;2]: ";
 	cin >> varA; // data input
 
-	bool inputDataIsCorrect; //declaring boolean variable that describes the correctness of input data
+	bool inputDataAreCorrect; //declaring boolean variable that describes the correctness of input data
 	if ((varA > 0) && (varA <= 2)) // checking the correctness of input data
 	{
-		inputDataIsCorrect = true;
+		inputDataAreCorrect = true;
 	}
 	else
 	{
-		inputDataIsCorrect = false;
+		inputDataAreCorrect = false;
 	}
 
-	if (inputDataIsCorrect)
+	if (inputDataAreCorrect)
 	{
 		float currentElem = varA - 1, lnA = 0, i = 0, percentError; //current element of the series, natural log of a, counter, percent error
 		const float CALCULATION_ACCURACY = 0.000001; // accuracy of calculation

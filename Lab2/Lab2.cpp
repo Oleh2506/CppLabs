@@ -14,19 +14,19 @@ int main()
     cout << "Input first side of the hole: "; cin >> side1;   // variable input
     cout << "Input second side of the hole: "; cin >> side2;  // variable input
 
-    bool data_is_correct; // declaration of boolean variable that describes the correctness of input data
+    bool data_are_correct; // declaration of boolean variable that describes the correctness of input data
 
     if ((edge1 <= 0) || (edge2 <= 0) || (edge3 <= 0) || (side1 <= 0) || (side2 <= 0)) // checking of input data
     {
         cout << "Error: input data aren't correct\n"; // error message output
-        data_is_correct = false; // input data aren't correct
+        data_are_correct = false; // input data aren't correct
     }
     else
     {
-        data_is_correct = true; // input data are correct
+        data_are_correct = true; // input data are correct
     }
 
-    if (data_is_correct) // the main part of the program will be executed in case of successful input data verification 
+    if (data_are_correct) // the main part of the program will be executed in case of successful input data verification 
     {
         if (((side1 >= edge1) && (side2 >= edge2)) || ((side1 >= edge2) && (side2 >= edge3)) // checking the possibility of pushing the brick through the hole
             || ((side1 >= edge1) && (side2 >= edge3)) || ((side1 >= edge2) && (side2 >= edge1)) 
