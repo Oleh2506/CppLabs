@@ -32,12 +32,9 @@ int main()
 		float currentElem = varA - 1, lnA = 0, i = 0, percentError; //current element of the series, natural log of a, counter, percent error
 		const float CALCULATION_ACCURACY = 0.000001;                // accuracy of calculation
 
-		cout << endl << "Elements of the series: " << endl;
-
 		// finding the natural logarithm value
 		do
 		{
-			cout << currentElem << " [" << i << "]; "; // element of the series output
 			lnA += currentElem;
 			i++;
 			currentElem *= ((-1) * (varA - 1) * i) / (i + 1);
@@ -53,12 +50,12 @@ int main()
 			percentError = 0;
 		}
 
-		cout << endl << endl << fixed << setprecision(6) << "Ln(a): " << lnA << endl << "Percent error: " << percentError << " %" << endl; // result message output
+		cout << endl << fixed << setprecision(6) << "Ln(a): " << lnA << endl << "Percent error: " << percentError << " %" << endl; // result message output
 	}
 	else
 	{
-		cout << "Error: input data aren't correct!" << endl; // error message output
+		cout << endl << "Error: input data aren't correct!" << endl; // error message output
 	}
 
-	
+	return 0;
 }
