@@ -1,7 +1,5 @@
-﻿// variant 2
-
-/*
-* Program to find the sum of n elements of the series
+﻿/*
+* Variant 2. Program to find the sum of n elements of the series
 */
 
 #include <iostream>
