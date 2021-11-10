@@ -2,9 +2,6 @@
 #include <cmath>
 #include <cstdarg>
 
-// Returns true if the number is positive and false if not
-bool isPositive(long double num);
-
 // Returns the largest argument passed to the function; -1.0 -- is an ellipsis control value
 long double maxNum(long double firstArg, ...);
 
@@ -21,6 +18,9 @@ void sidesValuesInput(long long n, long double& side1, long double& side2, long 
 
 // Prints the sequence numbers of triangles with largest areas and their areas in brackets; -1.0 -- is an ellipsis control value
 void resMessageOutput(long double maxArea, ...);
+
+// Prints the error message
+void errorMessageOutput();
 
 int main()
 {
@@ -53,25 +53,10 @@ int main()
     }
     else
     {
-        std::cout << "Error: input numbers aren\'t the sides of triangles!\n";
+        errorMessageOutput();
     }
 
     return 0;
-}
-
-// Returns true if the number is positive and false if not
-bool isPositive(long double num)
-{
-    bool numIsPositive;
-    if (num > 0)
-    {
-        numIsPositive = true;
-    }
-    else
-    {
-        numIsPositive = false;
-    }
-    return numIsPositive;
 }
 
 // Returns the largest argument passed to the function; -1.0 -- is an ellipsis control value
@@ -104,18 +89,8 @@ long double maxNum(long double firstArg, ...)
 // Returns true if the arguments passed to the function can be the sides of a triangle and false if not
 bool areTriangleSides(long double side1, long double side2, long double side3)
 {
-    bool sidesArePositive;
-    if (isPositive(side1) && isPositive(side2) && isPositive(side3))
-    {
-        sidesArePositive = true;
-    }
-    else
-    {
-        sidesArePositive = false;
-    }
-
     bool sidesAreCorrect;
-    if (sidesArePositive && (side1 + side2 > side3) && (side1 + side3 > side2) && (side3 + side2 > side1))
+    if ((side1 + side2 > side3) && (side1 + side3 > side2) && (side3 + side2 > side1))
     {
         sidesAreCorrect = true;
     }
@@ -182,4 +157,10 @@ void resMessageOutput(long double maxArea, ...)
         count++;
     }
     va_end(list1);
+}
+
+// Prints the error message
+void errorMessageOutput()
+{
+    std::cout << "Error: input numbers aren\'t the sides of triangles!\n";
 }
