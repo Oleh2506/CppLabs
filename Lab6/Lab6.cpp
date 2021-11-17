@@ -2,8 +2,8 @@
 #include <cmath>
 #include <cstdarg>
 
-// Returns the largest argument passed to the function; -1.0 -- is an ellipsis control value
-long double maxNum(long double firstArg, ...);
+// Returns the largest argument passed to the function; count -- the number of arguments
+long double maxNum(long long count, ...);
 
 // Returns true if the arguments passed to the function can be the sides of a triangle and false if not
 bool areTriangleSides(long double side1, long double side2, long double side3);
@@ -16,7 +16,7 @@ long double heronsFormula(long double side1, long double side2, long double side
 // n -- is a sequence number of triangle
 void sidesValuesInput(long long n, long double& side1, long double& side2, long double& side3);
 
-// Prints the sequence numbers of triangles with largest areas and their areas in brackets; -1.0 -- is an ellipsis control value
+// Prints the sequence numbers of triangles with largest areas and their areas in brackets; -1.0 -- an ellipsis control value
 void resMessageOutput(long double maxArea, ...);
 
 // Prints the error message
@@ -47,7 +47,7 @@ int main()
         area2 = heronsFormula(side21, side22, side23);
         area3 = heronsFormula(side31, side32, side33);
         long double maxArea;
-        maxArea = maxNum(area1, area2, area3, -1.0);
+        maxArea = maxNum(3, area1, area2, area3);
 
         resMessageOutput(maxArea, area1, area2, area3, -1.0);
     }
@@ -59,27 +59,21 @@ int main()
     return 0;
 }
 
-// Returns the largest argument passed to the function; -1.0 -- is an ellipsis control value
-long double maxNum(long double firstArg, ...)
+// Returns the largest argument passed to the function; count -- the number of arguments
+long double maxNum(long long count, ...)
 {
-    long double maxArg = firstArg;
     va_list list1;
-    va_start(list1, firstArg);
-    int count = 1;
-
-    while (count)
+    va_start(list1, count);
+    long double maxArg, arg;
+    maxArg = va_arg(list1, long double);
+    
+    for (long long i = 0; i < count - 1; ++i)
     {
-        long double arg = va_arg(list1, long double);
-        if (arg == -1.0)
-        {
-            break;
-        }
-
+        arg = va_arg(list1, long double);
         if (arg > maxArg)
         {
             maxArg = arg;
         }
-        count++;
     }
     va_end(list1);
 
