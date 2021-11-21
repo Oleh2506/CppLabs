@@ -1,4 +1,6 @@
-﻿#include <iostream>
+﻿// Variant 2. Program to find and compare the areas of three triangles.
+
+#include <iostream>
 #include <cmath>
 #include <cstdarg>
 
