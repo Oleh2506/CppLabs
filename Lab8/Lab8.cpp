@@ -125,7 +125,7 @@ int** generateArrayB(int** arrA, int n)
             for (int k = i + 1; k < n; ++k)
             {
                 flagL = ((flagL > 0) ? flagL - 1 : 0);
-                flagR = ((flagR < n) ? flagR + 1 : n);
+                flagR = ((flagR < (n - 1)) ? flagR + 1 : (n - 1));
                 for (int t = flagL; t <= flagR; ++t)
                 {
                     if (tempMax < arrA[k][t])
