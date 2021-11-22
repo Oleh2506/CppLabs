@@ -11,19 +11,31 @@ int getRandomNum();
 // Generates two-dimensional array of random integer numbers. 
 // The row number and the column number is variable n. It is entered by the user.
 // Returns entered n and the generated array.
-int** generateRandomArray(int& arrSize);
+int** generateRandom2DArray(int& arrSize);
 
 // Outputs the elements of two-dimensional array[rowNum x colNum].
 void twoDimensionalArrayOutput(int **arr, int rowNum, int colNum);
 
 // Deletes two-dimensional dynamic array.
-void deleteTwoDimensionalArray();
+void deleteTwoDimensionalArray(int** arr, int rowNum);
+
+// Generates two-dimensional array B[n][n] based on two-dimensional array A[n][n] 
+// according to the task. Returns array B[n][n].
+int** generateArrayB(int** arrA, int n);
 
 int main()
 {
-    int** arrA, ** arrB, n;
-    arrA = generateRandomArray(n);
+    int** arrA, n;
+    arrA = generateRandom2DArray(n);
+    std::cout << "\nArray A:\n";
     twoDimensionalArrayOutput(arrA, n, n);
+
+    int** arrB;
+    arrB = generateArrayB(arrA, n);
+    deleteTwoDimensionalArray(arrA, n);
+    std::cout << "\nArray B:\n";
+    twoDimensionalArrayOutput(arrB, n, n);
+    deleteTwoDimensionalArray(arrB, n);
     return 0;
 }
 
@@ -39,7 +51,7 @@ int getRandomNum()
 // Generates two-dimensional array of random integer numbers. 
 // The row number and the column number is variable n. It is entered by the user.
 // Returns entered n and the generated array.
-int** generateRandomArray(int& n)
+int** generateRandom2DArray(int& n)
 {
     do
     {
@@ -77,8 +89,53 @@ void twoDimensionalArrayOutput(int** arr, int rowNum, int colNum)
     {
         for (int j = 0; j < colNum; ++j)
         {
-            std::cout << std::setw(5) << arr[i][j];
+            std::cout << std::setw(8) << arr[i][j];
         }
         std::cout << '\n';
     }
+}
+
+// Deletes two-dimensional dynamic array.
+void deleteTwoDimensionalArray(int** arr, int rowNum)
+{
+    for (int i = 0; i < rowNum; ++i)
+    {
+        delete[] arr[i];
+    }
+    delete[] arr;
+}
+
+// Generates two-dimensional array B[n][n] based on two-dimensional array A[n][n] 
+// according to the task. Returns array B[n][n].
+int** generateArrayB(int** arrA, int n)
+{
+    int** arrB = new int* [n];
+    for (int i = 0; i < n; ++i)
+    {
+        arrB[i] = new int[n];
+    }
+
+    int tempMax, flagL, flagR;
+    for (int i = 0; i < n; ++i)
+    {
+        for (int j = 0; j < n; ++j)
+        {
+            tempMax = arrA[i][j];
+            flagL = flagR = j;
+            for (int k = i + 1; k < n; ++k)
+            {
+                flagL = ((flagL > 0) ? flagL - 1 : 0);
+                flagR = ((flagR < n) ? flagR + 1 : n);
+                for (int t = flagL; t <= flagR; ++t)
+                {
+                    if (tempMax < arrA[k][t])
+                    {
+                        tempMax = arrA[k][t];
+                    }
+                }
+            }
+            arrB[i][j] = tempMax;
+        }
+    }
+    return arrB;
 }
