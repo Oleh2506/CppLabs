@@ -27,6 +27,9 @@ float findMinAbsDif(float* arr, int arrSize);
 // Outputs the result message.
 void resMessageOutput(float maxAbsDif, float minAbsDif);
 
+// Deletes dynamic array of real numbers.
+void deleteArr(float* arr);
+
 int main()
 {
     srand(static_cast <unsigned int> (time(NULL)));
@@ -38,6 +41,7 @@ int main()
     float maxAbsDif, minAbsDif;
     maxAbsDif = findMaxAbsDif(arrB, arrBSize);
     minAbsDif = findMinAbsDif(arrB, arrBSize);
+    deleteArr(arrB);
 
     resMessageOutput(maxAbsDif, minAbsDif);
     return 0;
@@ -56,7 +60,6 @@ float generateRandomRealNum()
 // Returns the entered array size and the generated array.
 float* generateRandomArray(int &arrSize)
 {
-    float* arr;
     do
     {
         std::cout << "Enter the size of array: ";
@@ -67,7 +70,7 @@ float* generateRandomArray(int &arrSize)
         }
     } while (arrSize <= 0);
 
-    arr = new float[arrSize];
+    float* arr = new float[arrSize];
     for (int i = 0; i < arrSize; ++i)
     {
         arr[i] = generateRandomRealNum();
@@ -125,4 +128,10 @@ void resMessageOutput(float maxAbsDif, float minAbsDif)
     std::cout << '\n';
     std::cout << "The largest absolute value of the difference between neighbouring elements of the array:\t" << maxAbsDif << '\n';
     std::cout << "The smallest absolute value of the difference between neighbouring elements of the array:\t" << minAbsDif << '\n';
+}
+
+// Deletes dynamic array of real numbers.
+void deleteArr(float* arr)
+{
+    delete[] arr;
 }
