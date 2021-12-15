@@ -4,7 +4,7 @@
 #include <string>
 
 // Returns the sum of numbers from entered str if it contains digits and spaces only
-// and 0 if not.
+// and -1 if not.
 int findSum(std::string str);
 
 // Returns true if entered str contains characters from alphabet only and false if not. 
@@ -42,7 +42,7 @@ bool isStrCorrect(std::string str, std::string alphabet)
 }
 
 // Returns the sum of numbers from entered str if it contains digits and spaces only
-// and 0 if not.
+// and -1 if not.
 int findSum(std::string str)
 {
 	int sum{};
@@ -71,6 +71,9 @@ int findSum(std::string str)
 			currentNum = std::stoi(currentWord);
 			sum += currentNum;
 		}
+	}
+	else {
+		sum = -1;
 	}
 	return sum;
 }
