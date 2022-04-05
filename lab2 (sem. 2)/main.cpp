@@ -33,10 +33,12 @@ int main() {
 	PrintProductsList(long_term_products_list);
 
 	DeleteExpiredProducts(short_term_products_list, StringToDate(current_date));
+	WriteToBinFile(SHORT_TERM_PRODUCTS_LIST_NAME, short_term_products_list);
 	std::cout << "\nShort term storage products list after deleting expired products:\n";
 	PrintProductsList(short_term_products_list);
 
 	DeleteExpiredProducts(long_term_products_list, StringToDate(current_date));
+	WriteToBinFile(LONG_TERM_PRODUCTS_LIST_NAME, long_term_products_list);
 	std::cout << "\nLong term storage products list after deleting expired products:\n";
 	PrintProductsList(long_term_products_list);
 	return 0;
