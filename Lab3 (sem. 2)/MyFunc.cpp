@@ -42,7 +42,6 @@ void fillRandomQuadrangleArray(Quadrangle* quadranglesArray, size_t arrSize) {
 			pointsArray[j].setY(getRandomFloatNumber());
 		}
 
-		Quadrangle currQ(pointsArray);
-		quadranglesArray[i] = currQ;
+		quadranglesArray[i].setConsecutiveVertices(pointsArray);
 	}
 }

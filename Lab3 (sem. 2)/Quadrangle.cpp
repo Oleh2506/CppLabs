@@ -30,6 +30,14 @@ Quadrangle::Quadrangle(Point pointsArr[QUADRANGLE_VERTICES_NUMBER]) {
 	calculatePerimeter();
 }
 
+void Quadrangle::setConsecutiveVertices(Point pointsArr[QUADRANGLE_VERTICES_NUMBER]) {
+	validateInputData(pointsArr);
+
+	calculateSidesLengths();
+
+	calculatePerimeter();
+}
+
 float Quadrangle::getPerimeter() { return perimeter_; }
 
 void Quadrangle::validateInputData(Point pointsArr[QUADRANGLE_VERTICES_NUMBER]) {

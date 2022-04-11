@@ -18,6 +18,7 @@ private:
 	bool isQuadrangleConvex(Point[QUADRANGLE_VERTICES_NUMBER]);
 
 public:
+	void setConsecutiveVertices(Point[QUADRANGLE_VERTICES_NUMBER]);
 	void printSidesLengths();
 	void printPerimeter();
 	void printConsecutiveVertices();
