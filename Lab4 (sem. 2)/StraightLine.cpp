@@ -129,8 +129,7 @@ StraightLine& StraightLine::operator++() {
 }
 
 StraightLine StraightLine::operator++(int) {
-	StraightLine temp(a_, b_, c_);
-
+	StraightLine temp(*this);
 	++(*this);
 
 	return temp;

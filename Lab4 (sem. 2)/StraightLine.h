@@ -33,3 +33,4 @@ public:
 	StraightLine operator++(int);
 	~StraightLine();
 };
+
