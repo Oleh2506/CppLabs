@@ -18,12 +18,17 @@ int main()
 		std::cout << "p1 and p2 aren\'t parallel\n";
 	}
 
+	Point p3IntersectionPointOX{ p3.getIntersectionPointOX() }, p3IntersectionPointOY{ p3.getIntersectionPointOY() };
+	p3IntersectionPointOX.print("p3\'s OX intersection point before rotating");
+	p3IntersectionPointOY.print("p3\'s OY intersection point before rotating");
+
 	p3++;
 	p3.print("p3 after rotating");
 
-	Point p3IntersectionPointOX{ p3.getIntersectionPointOX() }, p3IntersectionPointOY{ p3.getIntersectionPointOY() };
-	p3IntersectionPointOX.print("p3\'s OX intersection point");
-	p3IntersectionPointOY.print("p3\'s OY intersection point");
+	p3IntersectionPointOX = p3.getIntersectionPointOX();
+	p3IntersectionPointOY = p3.getIntersectionPointOY();
+	p3IntersectionPointOX.print("p3\'s OX intersection point after rotating");
+	p3IntersectionPointOY.print("p3\'s OY intersection point after rotating");
 
 	return 0;
 }
