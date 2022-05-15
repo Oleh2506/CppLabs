@@ -139,14 +139,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ArithmeticSeries.cpp" />
-    <ClCompile Include="GeometricSeries.cpp" />
+    <ClCompile Include="ArithmeticSequence.cpp" />
+    <ClCompile Include="GeometricSequence.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="TSeries.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ArithmeticSeries.h" />
-    <ClInclude Include="GeometricSeries.h" />
+    <ClInclude Include="ArithmeticSequence.h" />
+    <ClInclude Include="GeometricSequence.h" />
     <ClInclude Include="TSeries.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -21,18 +21,18 @@
     <ClCompile Include="TSeries.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GeometricSeries.cpp">
+    <ClCompile Include="GeometricSequence.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ArithmeticSeries.cpp">
+    <ClCompile Include="ArithmeticSequence.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ArithmeticSeries.h">
+    <ClInclude Include="ArithmeticSequence.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GeometricSeries.h">
+    <ClInclude Include="GeometricSequence.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="TSeries.h">
