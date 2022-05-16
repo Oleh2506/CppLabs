@@ -10,6 +10,6 @@ void fillGeometricSequences(std::vector<GeometricSequence> &geometricSequences);
 
 void fillArithmeticSequences(std::vector<ArithmeticSequence> &arithmeticSequences);
 
-double findConditionalSum(std::vector<GeometricSequence> geometricSequences, std::vector<ArithmeticSequence> arithmeticSequences, int n, int m);
+double findConditionalSum(const std::vector<GeometricSequence>& geometricSequences, const std::vector<ArithmeticSequence>& arithmeticSequences, int n, int m);
 
-void printBaseInfo(std::vector<GeometricSequence> geometricSequences, std::vector<ArithmeticSequence> arithmeticSequences, int n, int m);
+void printBaseInfo(const std::vector<GeometricSequence>& geometricSequences, const std::vector<ArithmeticSequence>& arithmeticSequences, int n, int m);

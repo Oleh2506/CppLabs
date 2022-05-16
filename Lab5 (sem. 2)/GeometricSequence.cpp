@@ -10,8 +10,14 @@ double GeometricSequence::calculateNthTerm(int n) const {
 
 
 double GeometricSequence::calculateSumOfNTerms(int n) const {
-	double sumOfNTerms = firstTerm_ * (pow(commonRatio_, n) - 1) / (commonRatio_ - 1);
+	double sumOfNTerms{};
 
+	if (commonRatio_ != 1.0) {
+		sumOfNTerms = firstTerm_ * (pow(commonRatio_, n) - 1) / (commonRatio_ - 1);
+	}
+	else {
+		sumOfNTerms = firstTerm_ * n;
+	}
 	return sumOfNTerms;
 }
 

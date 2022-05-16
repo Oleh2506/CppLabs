@@ -39,7 +39,7 @@ void fillArithmeticSequences(std::vector<ArithmeticSequence> &arithmeticSequence
 	}
 }
 
-double findConditionalSum(std::vector<GeometricSequence> geometricSequences, std::vector<ArithmeticSequence> arithmeticSequences, int n, int m) {
+double findConditionalSum(const std::vector<GeometricSequence> &geometricSequences, const std::vector<ArithmeticSequence> &arithmeticSequences, int n, int m) {
 	int maxIndexG{ 0 }, maxIndexA{ 0 };
 
 	for (size_t i{ 1 }; i < arithmeticSequences.size(); ++i) {
@@ -66,7 +66,7 @@ double findConditionalSum(std::vector<GeometricSequence> geometricSequences, std
 	return conditionalSum;
 }
 
-void printBaseInfo(std::vector<GeometricSequence> geometricSequences, std::vector<ArithmeticSequence> arithmeticSequences, int n, int m) {
+void printBaseInfo(const std::vector<GeometricSequence> &geometricSequences, const std::vector<ArithmeticSequence> &arithmeticSequences, int n, int m) {
 	for (size_t i{ 0 }; i < arithmeticSequences.size(); ++i) {
 		std::cout << "AS(" << i << ").sum(" << m << ") = " << arithmeticSequences.at(i).getSumOfNTerms(m);
 		std::cout << ", AS(" << i << ").commonDifference = " << arithmeticSequences.at(i).getCommonDifference();
