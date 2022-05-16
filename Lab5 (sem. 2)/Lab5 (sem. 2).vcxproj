@@ -140,12 +140,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ArithmeticSequence.cpp" />
+    <ClCompile Include="Functions.cpp" />
     <ClCompile Include="GeometricSequence.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="TSeries.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ArithmeticSequence.h" />
+    <ClInclude Include="Functions.h" />
     <ClInclude Include="GeometricSequence.h" />
     <ClInclude Include="TSeries.h" />
   </ItemGroup>

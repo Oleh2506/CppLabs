@@ -15,12 +15,11 @@ double GeometricSequence::calculateSumOfNTerms(int n) const {
 	return sumOfNTerms;
 }
 
-GeometricSequence::GeometricSequence(double firstTerm, double commonRatio) : firstTerm_{ firstTerm }, TSeries() {
+GeometricSequence::GeometricSequence(double firstTerm, double commonRatio) : firstTerm_{ firstTerm }, commonRatio_{ commonRatio }, TSeries() {
 	assert(commonRatio != 0.0);
-	commonRatio = commonRatio;
 }
 
-GeometricSequence::GeometricSequence() : firstTerm_{ 0.0 }, commonRatio_{ 0.0 }, TSeries() {}
+GeometricSequence::GeometricSequence() : firstTerm_{ 0.0 }, commonRatio_{ 1.0 }, TSeries() {}
 
 void GeometricSequence::setFirstTerm(double firstTerm) { firstTerm_ = firstTerm; }
 
@@ -28,7 +27,7 @@ double GeometricSequence::getFirstTerm() const { return firstTerm_; }
 
 void GeometricSequence::setCommonRatio(double commonRatio) {
 	assert(commonRatio != 0.0);
-	commonRatio = commonRatio;
+	commonRatio_ = commonRatio;
 }
 
 double GeometricSequence::getCommonRatio() const { return commonRatio_; }

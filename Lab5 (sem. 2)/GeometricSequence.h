@@ -10,7 +10,7 @@ protected:
 	virtual double calculateNthTerm(int n) const;
 	virtual double calculateSumOfNTerms(int n) const;
 
-private:
+public:
 	GeometricSequence(double firstTerm, double commonRatio);
 	GeometricSequence();
 	void setFirstTerm(double firstTerm);
