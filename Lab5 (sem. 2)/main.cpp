@@ -1,4 +1,6 @@
-﻿#include <iostream>
+﻿// Variant 2
+
+#include <iostream>
 #include "ArithmeticSequence.h"
 #include "GeometricSequence.h"
 #include "Functions.h"
