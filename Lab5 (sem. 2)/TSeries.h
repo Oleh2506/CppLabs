@@ -2,10 +2,10 @@
 
 class TSeries {
 protected:
-	virtual double calculateNthTerm(int n) const = 0;
-	virtual double calculateSumOfNTerms(int n) const = 0;
+	double firstTerm_;
 
 public:
-	double getNthTerm(int n) const;
-	double getSumOfNTerms(int n) const;
+	TSeries(double firstTerm);
+	virtual double getNthTerm(int n) const = 0;
+	virtual double getSumOfNTerms(int n) const = 0;
 };

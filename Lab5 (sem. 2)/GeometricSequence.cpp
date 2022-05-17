@@ -2,14 +2,17 @@
 #include <cassert>
 #include <cmath>
 
-double GeometricSequence::calculateNthTerm(int n) const {
+double GeometricSequence::getNthTerm(int n) const {
+	assert(n > 0);
+
 	double nthTerm = firstTerm_ * pow(commonRatio_, n - 1);
 
 	return nthTerm;
 }
 
 
-double GeometricSequence::calculateSumOfNTerms(int n) const {
+double GeometricSequence::getSumOfNTerms(int n) const {
+	assert(n > 0);
 	double sumOfNTerms{};
 
 	if (commonRatio_ != 1.0) {
@@ -21,11 +24,11 @@ double GeometricSequence::calculateSumOfNTerms(int n) const {
 	return sumOfNTerms;
 }
 
-GeometricSequence::GeometricSequence(double firstTerm, double commonRatio) : firstTerm_{ firstTerm }, commonRatio_{ commonRatio }, TSeries() {
+GeometricSequence::GeometricSequence(double firstTerm, double commonRatio) : commonRatio_{ commonRatio }, TSeries( firstTerm ) {
 	assert(commonRatio != 0.0);
 }
 
-GeometricSequence::GeometricSequence() : firstTerm_{ 0.0 }, commonRatio_{ 1.0 }, TSeries() {}
+GeometricSequence::GeometricSequence() : commonRatio_{ 1.0 }, TSeries( 0.0 ) {}
 
 void GeometricSequence::setFirstTerm(double firstTerm) { firstTerm_ = firstTerm; }
 

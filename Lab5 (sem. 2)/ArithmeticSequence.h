@@ -4,13 +4,11 @@
 
 class ArithmeticSequence : public TSeries {
 private:
-	double firstTerm_, commonDifference_;
-
-protected:
-	virtual double calculateNthTerm(int n) const;
-	virtual double calculateSumOfNTerms(int n) const;
+	double commonDifference_;
 
 public:
+	virtual double getNthTerm(int n) const;
+	virtual double getSumOfNTerms(int n) const;
 	ArithmeticSequence(double firstTerm, double commonDifference);
 	ArithmeticSequence();
 	void setFirstTerm(double firstTerm);

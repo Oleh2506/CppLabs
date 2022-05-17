@@ -1,21 +1,26 @@
 #include "ArithmeticSequence.h"
+#include <cassert>
 
-double ArithmeticSequence::calculateNthTerm(int n) const {
+double ArithmeticSequence::getNthTerm(int n) const {
+	assert(n > 0);
+
 	double nthTerm = firstTerm_ + commonDifference_ * (n - 1.0);
 
 	return nthTerm;
 }
 
 
-double ArithmeticSequence::calculateSumOfNTerms(int n) const {
-	double sumOfNTerms = (firstTerm_ + calculateNthTerm(n)) * n / 2;
+double ArithmeticSequence::getSumOfNTerms(int n) const {
+	assert(n > 0);
+
+	double sumOfNTerms = (firstTerm_ + getNthTerm(n)) * n / 2;
 
 	return sumOfNTerms;
 }
 
-ArithmeticSequence::ArithmeticSequence(double firstTerm, double commonDifference) : firstTerm_{ firstTerm }, commonDifference_{ commonDifference }, TSeries() {}
+ArithmeticSequence::ArithmeticSequence(double firstTerm, double commonDifference) : commonDifference_{ commonDifference }, TSeries( firstTerm ) {}
 
-ArithmeticSequence::ArithmeticSequence() : firstTerm_{ 0.0 }, commonDifference_{ 0.0 }, TSeries() {}
+ArithmeticSequence::ArithmeticSequence() : commonDifference_{ 0.0 }, TSeries( 0.0 ) {}
 
 void ArithmeticSequence::setFirstTerm(double firstTerm) { firstTerm_ = firstTerm; }
 

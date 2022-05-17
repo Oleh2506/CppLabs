@@ -4,13 +4,11 @@
 
 class GeometricSequence : public TSeries {
 private:
-	double firstTerm_, commonRatio_;
-
-protected:
-	virtual double calculateNthTerm(int n) const;
-	virtual double calculateSumOfNTerms(int n) const;
+	double commonRatio_;
 
 public:
+	virtual double getNthTerm(int n) const;
+	virtual double getSumOfNTerms(int n) const;
 	GeometricSequence(double firstTerm, double commonRatio);
 	GeometricSequence();
 	void setFirstTerm(double firstTerm);
