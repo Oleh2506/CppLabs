@@ -1,4 +1,6 @@
-﻿#include <iostream>
+﻿// variant 2
+
+#include <iostream>
 #include "TreeNode.h"
 #include "func.h"
 
