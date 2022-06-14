@@ -1,6 +1,6 @@
 ﻿#include <iostream>
 #include "TreeNode.h"
-#include "functions.h"
+#include "func.h"
 
 int main()
 {

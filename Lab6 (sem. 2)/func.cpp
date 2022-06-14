@@ -1,4 +1,4 @@
-#include "functions.h"
+#include "func.h"
 
 void buildTree(TreeNode* tree) {
 	std::cout << "Key of tree root: ";
